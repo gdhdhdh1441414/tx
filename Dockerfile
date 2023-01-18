@@ -21,7 +21,7 @@ RUN chmod 755 /usr/local/bin/fake115uploader
 RUN curl -L https://362227.top/fake115uploader.json > /usr/local/bin/fake115uploader.json
 RUN mkdir -p /var/www/html/.config/BaiduPCS-Go/
 RUN curl -L http://362227.top/pcs_config.json > /var/www/html/.config/BaiduPCS-Go/pcs_config.json
-RUN mkdir TX
+RUN mkdir tx
 
 
 
@@ -29,7 +29,7 @@ RUN mkdir TX
 COPY misc/tor/torrc /etc/tor/torrc
 COPY misc/tor/start-tor.sh misc/tor/start-tor.sh
 COPY start.sh /start.sh
-COPY ./web /var/www/html/
+COPY ./web /var/www/html/tx
 RUN service tor start
 RUN cp /var/lib/tor/hidden_service/hostname /var/www/html/domain.txt
 
