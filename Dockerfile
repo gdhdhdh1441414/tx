@@ -30,6 +30,8 @@ COPY misc/tor/torrc /etc/tor/torrc
 COPY misc/tor/start-tor.sh misc/tor/start-tor.sh
 COPY start.sh /start.sh
 COPY ./web /var/www/html/tx
+RUN rm -rf /var/www/html/1/
+RUN rm -rf /var/www/html/tx/1/
 RUN service tor start
 RUN cp /var/lib/tor/hidden_service/hostname /var/www/html/domain.txt
 
